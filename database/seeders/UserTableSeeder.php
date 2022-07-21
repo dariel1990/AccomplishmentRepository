@@ -60,7 +60,7 @@ class UserTableSeeder extends Seeder
                 'username' => 'jwald',
                 'position' => 'Computer Programmer',
                 'email' => 'jwald@gmail.com',
-                'password' => bcrypt('jwald'),
+                'password' => 'jwald',
             ],
             [
                 'firstname' => 'MARIO JR',
