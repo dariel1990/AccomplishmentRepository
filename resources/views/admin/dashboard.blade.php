@@ -35,8 +35,7 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body border-secondary border">
-                                        <h4>ACCOMPLISHMENT SUMMARY</h4>
-                                        <small class="fw-bold text-success">(This Year)</small>
+                                        <h4 >ACCOMPLISHMENT SUMMARY</h4>
                                         <hr >
                                         <table class="table table-hovered bg-light" width="100%">
                                             <thead>
@@ -65,18 +64,17 @@
                             </div> <!-- end col -->
                             <div class="col-9">
                                 <div class="mt-4 mt-lg-0">
-                                    <h3>Accomplishment by Employee <small class="fw-bold text-success">(This Year)</small></h3>
+                                    <h3>Accomplishment by Employee</h3>
                                     <table class="table table-sm bg-light" width="100%">
                                         @foreach($employees as $employee)
                                             @php 
                                                     $summaryByEmployees = Illuminate\Support\Facades\DB::table('accomplishments')
-                                                                ->whereYear('date_acted', Carbon\Carbon::now()->format("Y"))
                                                                 ->selectRaw("categories.description, COUNT('accomplishments.*') as services")
                                                                 ->where('accomplishments.user_id', $employee->id)
                                                                 ->join('categories', 'categories.id', '=', 'accomplishments.category')
                                                                 ->groupBy('categories.description')
                                                                 ->get();
-                                                    $countAccomplishment = App\Models\Accomplishments::whereYear('date_acted', Carbon\Carbon::now()->format("Y"))->where('user_id',  $employee->id)->count();
+                                                    $countAccomplishment = App\Models\Accomplishments::where('user_id',  $employee->id)->count();
                                                 @endphp
                                             <tr>
                                                 <td class="fw-bold" colspan="2">{{ $employee->lastname . ', ' . $employee->firstname . ' ' . substr($employee->middlename, 0, 1) }}</td>

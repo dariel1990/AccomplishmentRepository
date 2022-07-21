@@ -32,13 +32,13 @@ Route::post('/calendar-ajax', [AccomplishmentController::class, 'calendarAccompl
 
 Route::group(['prefix' => 'admin'] , function () {
 	Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
-	Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+	Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/print-summary/{from}/{to}', [AdminController::class, 'printSummary']);
     Route::get('/print-by-cat/{from}/{to}', [AdminController::class, 'printByCat']);
 
     Route::group(['namespace' => 'Auth'], function () {
-        Route::get('/login', [AdminLoginController::class, 'login'])->name('admin.auth.login');
-        Route::post('/login', [AdminLoginController::class, 'loginAdmin'])->name('admin.auth.loginAdmin');
-        Route::post('/logout', [AdminLoginController::class, 'logout'])->name('admin.auth.logout');
+        Route::get('login', [AdminLoginController::class, 'login'])->name('admin.auth.login');
+        Route::post('login', [AdminLoginController::class, 'loginAdmin'])->name('admin.auth.loginAdmin');
+        Route::post('logout', [AdminLoginController::class, 'logout'])->name('admin.auth.logout');
     });
 });

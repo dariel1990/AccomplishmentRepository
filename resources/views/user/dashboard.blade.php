@@ -155,7 +155,7 @@
                                             </div>
                                         </div>  
 
-                                        <div class="col-12">
+                                        <div class="col-12 d-none">
                                             <div class="mb-2">
                                                 <label class="control-label form-label">Problem/Request Description</label>
                                                 <input class="form-control text-uppercase" placeholder="Input Request" type="text" name="problem" id="problem" required autocomplete="off"/>

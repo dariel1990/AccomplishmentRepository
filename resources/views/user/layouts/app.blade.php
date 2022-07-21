@@ -35,7 +35,7 @@
             <!-- LOGO -->
             <a href="/" class="logo text-center logo-light">
                 <span class="logo-lg">
-                    <img src="assets/images/logo.png" alt="" height="16">
+                    <img src="assets/images/logo.png" alt="" height="30">
                 </span>
                 <span class="logo-sm">
                     <img src="assets/images/logo_sm.png" alt="" height="16">
