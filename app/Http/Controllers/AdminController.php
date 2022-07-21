@@ -26,12 +26,11 @@ class AdminController extends Controller
         $data = Accomplishments::get();
         $categories = Category::get();
         $summary = DB::table('accomplishments')
-                    ->whereYear('date_acted', Carbon::now()->format("Y"))
                     ->selectRaw("categories.description, COUNT('accomplishments.*') as services")
                     ->join('categories', 'categories.id', '=', 'accomplishments.category')
                     ->groupBy('categories.description')
                     ->get();
-        $countAccomplishment = $summary->sum('services');
+        $countAccomplishment = Accomplishments::count();
         $employees = User::orderBy('lastname', 'ASC')->get();
 
         return view('admin.dashboard', [ 
@@ -70,14 +69,11 @@ class AdminController extends Controller
         $printTo = Carbon::parse($to)->lastofMonth()->format('Y-m-d');
         
         $summary = Accomplishments::whereBetween('date_acted', [$printFrom, $printTo])
-                    ->whereNotIn('user_id', [7,9,11,12])
                     ->with(['cat', 'user'])
                     ->orderBy('date_acted', 'ASC')
                     ->get();
-        
-        $countAllBetween = Accomplishments::whereBetween('date_acted', [$printFrom, $printTo])
-                    ->whereNotIn('user_id', [7,9,11,12])
-                    ->count();
+
+        $countAllBetween = Accomplishments::whereBetween('date_acted', [$printFrom, $printTo])->count();
 
         $pdf = App::make('snappy.pdf.wrapper');
 

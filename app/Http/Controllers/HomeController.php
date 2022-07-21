@@ -89,12 +89,6 @@ class HomeController extends Controller
                     ->with(['cat', 'user'])
                     ->get()
                     ->groupBy('cat.description');
-        $summary = Accomplishments::select(DB::raw('DISTINCT(solution)'),'category')
-                    ->where('user_id', $user)
-                    ->whereBetween('date_acted', [$printFrom, $printTo])
-                    ->with(['cat', 'user'])
-                    ->get()
-                    ->groupBy('cat.description');
                     
         $pdf = App::make('snappy.pdf.wrapper');
 

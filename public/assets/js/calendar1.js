@@ -119,7 +119,7 @@ $(function () {
         let time_completed = split_date_completed[1];
         t.push({
             id: record.id,
-            title: record.problem, 
+            title: record.solution, 
             start: date_acted + "T" + time_acted, 
             end: date_completed + "T" + time_completed, 
             allday: false,
