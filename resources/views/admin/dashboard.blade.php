@@ -41,7 +41,7 @@
                                             <thead>
                                                 <tr>
                                                     <th class="align-middle" width="80%">Service Category</th>
-                                                    <th class="text-center align-middle" width="20%">No of Services</th>
+                                                    <th class="text-center align-middle" width="20%">No of Services</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -59,12 +59,26 @@
 
                     <li class="side-nav-title side-nav-item">Navigation</li>
 
-                    <li class="side-nav-item menuitem-active">
+                    {{-- <li class="side-nav-item menuitem-active">
                         <a data-bs-toggle="collapse" href="/" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                             <i class="uil-home-alt"></i>
                             <span> Dashboards </span>
                         </a>
+                    </li> --}}
+
+                    <li class="side-nav-item menuitem-active">
+                        <a data-bs-toggle="collapse" href="/" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                            <i class="uil-home-alt"></i>
+                            <span> Office </span>
+                        </a>
                     </li>
+                    <li class="side-nav-item menuitem-active">
+                        <a href="{{ route('office.setup') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                            <i class="uil-clipboard-alt"></i>
+                            <span> Setup </span>
+                        </a>
+                    </li>
+
                 </ul>
 
                 <!-- Help Box -->

@@ -40,6 +40,7 @@ class AdminController extends Controller
             'countAccomplishment' => $countAccomplishment,
             'employees' => $employees,
         ]);
+
     }
 
     public function printSummary($from, $to)

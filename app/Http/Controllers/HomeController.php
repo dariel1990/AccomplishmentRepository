@@ -36,7 +36,7 @@ class HomeController extends Controller
         $categories = Category::get();
         $summary = DB::table('accomplishments')
                     ->selectRaw("categories.description, COUNT('accomplishments.*') as services")
-                    ->where('accomplishments.user_id', $userID)
+                    // ->where('accomplishments.user_id', $userID)
                     ->join('categories', 'categories.id', '=', 'accomplishments.category')
                     ->groupBy('categories.description')
                     ->get();
@@ -49,6 +49,9 @@ class HomeController extends Controller
             'summary' => $summary,
             'countAccomplishment' => $countAccomplishment,
         ]);   
+
+        $summary = DB::table('accomplishments')->get();
+    
     }
 
     public function edit($id)
