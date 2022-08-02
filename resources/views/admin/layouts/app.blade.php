@@ -21,7 +21,8 @@
     <link href="{{ asset ('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style" />
     <link href="{{ asset ('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
     <!-- SweedAlert -->
-    <link href="{{ asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />        
+    <link href="{{ asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+      
     @stack('page-css')
 </head>
 
@@ -66,16 +67,17 @@
                         </a>
                     </li> --}}
 
-                    <li class="side-nav-item menuitem-active">
-                        <a data-bs-toggle="collapse" href="/" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                            <i class="uil-home-alt"></i>
-                            <span> Office </span>
-                        </a>
-                    </li>
+                    
                     <li class="side-nav-item menuitem-active">
                         <a href="{{ route('office.setup') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                             <i class="uil-clipboard-alt"></i>
                             <span> Setup </span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item menuitem-active">
+                        <a href="{{ route('individual.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                            <i class="mdi mdi-account-edit"></i>
+                            <span> Individual </span>
                         </a>
                     </li>
 

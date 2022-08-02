@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\OfficeSetupController;
 use App\Http\Controllers\AccomplishmentController;
 use App\Http\Controllers\Auth\AdminLoginController;
+use App\Http\Controllers\IndividualTargetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,24 @@ use App\Http\Controllers\Auth\AdminLoginController;
 
 Auth::routes();
 
-// Route::get('login', [LoginController::class, 'login']);
-// Route::post('login', [LoginController::class, 'submitLogin']);
-Route::get('/setup', [OfficeSetupController::class, 'show'])->name('office.setup')->middleware('auth:admin');
+
+Route::get('/setup', [OfficeSetupController::class, 'show'])    
+        ->name('office.setup')
+        ->middleware('auth:admin');
+
+Route::get('/show-individual', [IndividualTargetController::class, 'show'])
+        ->name('individual.index')
+        ->middleware('auth:admin');
+
+Route::post('/setup-store', [OfficeSetupController::class, 'store'])
+        ->middleware('auth:admin');
+
+Route::get('/setup', [OfficeSetupController::class, 'list'])
+        ->name('office.setup')
+        ->middleware('auth:admin');
+
+
+
 
 
 Route::get('/', [HomeController::class, 'index']);
